@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>clipboard.js</title>
+    <script src="clipboard.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Clipboard.js</h1>
+    Source code: <a href="clipboard.js">clipboard.js</a>
+    <p id="clipboardNotSupported">
+      ClipboardItem not supported :
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/ClipboardItem#browser_compatibility"
+        >https://developer.mozilla.org/en-US/docs/Web/API/ClipboardItem#browser_compatibility</a
+      >
+    </p>
+
+    <p>
+      Text to copy <br />
+      <textarea id="text" cols="30" rows="10">¯\_( ͡° ͜ʖ ͡°)_/¯</textarea>
+      <button type="button" id="copyText">
+        Copy the text to your clipboard
+      </button>
+      <textarea
+        id="textPaste"
+        placeholder="Paste the text here"
+        cols="30"
+        rows="10"
+      ></textarea>
+    </p>
+
+    <p>
+      <img src="coffee.png" alt="coffee" loading="lazy" width="100" />
+
+      <button type="button" id="copyImage">
+        Copy the picture to your clipboard
+      </button>
+    </p>
+  </body>
+</html>
