@@ -19,10 +19,13 @@ async function copyImage() {
       const data = [new ClipboardItem({ [file.type]: file })];
       await navigator.clipboard.write(data);
       copyTextImageBtn.innerHTML = "<span>👌</span> Copied!";
+
+      document.getElementById("log").innerHTML = "";
     } catch (err) {
       copyTextImageBtn.innerHTML = "<span>😭</span> Error copying image";
 
       console.error("Failed to copy image: ", err);
+      document.getElementById("log").innerHTML = JSON.stringify(err);
     }
   } else {
     copyTextImageBtn.innerHTML = "<span>😭</span> ClipboardItem not supported";
@@ -41,9 +44,11 @@ async function copyText() {
     await navigator.clipboard.writeText(text.value);
     copyTextBtn.innerHTML = "<span>👌</span> Copied!";
     document.getElementById("textPaste").value = "";
+    document.getElementById("log").innerHTML = "";
   } catch (err) {
     copyTextBtn.innerHTML = "<span>😭</span> Error copying text";
     console.error("Failed to copy: ", err);
+    document.getElementById("log").innerHTML = JSON.stringify(err);
   }
 
   setTimeout(() => {
